@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+
+
+
+{% block infoBlock %}
+
+<h2> Suggestion</h2>
+
+<form action = "/suggestion/" method = "post" enctype="multipart/form-data">
+
+
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <button type = "submit"> Add</button>
+
+</form>
+
+
+{% endblock %}

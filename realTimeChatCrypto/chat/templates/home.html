@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block titleBlock %} {{ title }} {% endblock %}
+
+
+
+<a href="{% url 'index' %}"> Chat Room </a>
+
+
+{% block infoBlock %}
+
+    <ul>
+
+        {% for item in mySuggestion %}
+
+            <!-- Display the author as well -->
+
+         <img src = {{ item.image }} >
+
+        <li> {{ item.suggestionField}}  --  {{ item.author }}: {{ item.publishedDate}} </li>
+
+            <ul>
+
+                {% for com in item.comments %}
+                    <li>
+                        {{ com }}
+
+
+                    </li>
+
+
+                    {% endfor %}
+
+                    <li>
+                        <a href = "{{ item.id }}" > New Comment</a>
+                    </li>
+
+            </ul>
+
+        {% endfor %}
+
+    </ul>
+
+
+
+{% endblock %}

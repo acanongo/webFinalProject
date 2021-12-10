@@ -1,0 +1,36 @@
+th{
+    padding: 15px;
+    text-align: right;
+    border-bottom: 1px solid #ddd;
+    color: blue;
+
+}
+
+ td{
+    padding: 15px;
+    text-align: right;
+    border-bottom: 1px solid #ddd;
+
+
+
+}
+
+/*  highlight table row*/
+
+tr:hover{background-color:yellow;
+
+}
+
+.positive{
+
+    color: darkgreen;
+}
+.negative{
+    color:red;
+}
+
+
+tr:nth-child(even)
+{
+    background-color: lightyellow;
+}

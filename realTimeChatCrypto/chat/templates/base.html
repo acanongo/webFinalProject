@@ -1,0 +1,93 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <script type = "text/Javascript">
+
+            function refreshPage(timeInterval)
+            {
+                setTimeout("location.reload();", timeInterval);
+            }
+
+    </script>
+
+    <title>
+        {% block titleBlock %}
+
+        {% endblock %}
+    </title>
+
+    {% block css %}
+
+
+
+     {% endblock %}
+
+
+
+    <link rel = "stylesheet"  href = "{% static 'css/navgationBar.css' %}">
+
+</head>
+
+<!-- refresh is not that often because of API Restriction -->
+<body onload="Javascript:refreshPage(9000000);">
+
+    <nav >
+
+
+        {% if user.is_authenticated %}
+
+            <ul class = "navgationBar">
+
+
+                <li>
+                    <label class = "username"> Hi {{ user.username }}! </label>
+                </li>
+
+                <li>
+                    <a class = "on" href = "{% url 'home' %}"> Discussion Board</a>
+                </li>
+
+                <li>
+                    <a class = "on" href = "{% url 'suggestion' %}"> Add Suggestion </a>
+                </li>
+
+                <li>
+                    <a class = "on" href = "{%  url 'index' %}" > Go to Chat Room </a>
+                </li>
+
+                <li>
+                    <a class = "on" href = "{%  url 'stats' %}" > Quick Stats </a>
+                </li>
+
+                <li>
+                    <a class = "on" href="{% url 'logout' %}" > Log Out</a>
+                </li>
+
+             </ul>
+            </nav>
+
+
+
+        {% else %}
+            <p> You are not Log In</p>
+
+            <a href = "{% url 'login' %}"> Log In </a>
+
+            <a href = "{% url 'register' %}"> Register Here</a>
+
+        {% endif %}
+
+
+
+
+    {% block infoBlock %}
+
+    {% endblock %}
+
+</body>
+
+
+</html>

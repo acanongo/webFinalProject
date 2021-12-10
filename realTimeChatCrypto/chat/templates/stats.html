@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block css %}
+
+    <link rel="stylesheet" href="{% static 'css/quick_stats.css' %}">
+{% endblock %}
+
+{% block titleBlock %} {{ title }} {% endblock %}
+
+    {% block infoBlock %}
+
+        <table>
+
+        <tr>
+            <th>Asset Name</th>
+            <th>Asset Symbol</th>
+            <th>Price (USD) </th>
+            <th>Percent Change (24 hour)</th>
+            <th>Market Cap (USD)</th>
+
+        </tr>
+
+            {% for asset in data %}
+                <tr>
+                <td> {{ asset.name }} <img src="{{ asset.logo }}"> </td>
+                <td> {{ asset.symbol }} </td>
+                <td> {{ asset.price }}</td>
+
+                    {% if asset.deltaOneDay > 0 %}
+
+                        <td class = "positive"> {{ asset.deltaOneDay }}% </td>
+
+                     {% else  %}
+
+                        <td class = "negative"> {{ asset.deltaOneDay }}% </td>
+                    {% endif %}
+
+                <td> {{ asset.marketCap }}</td>
+                </tr>
+
+            {% endfor %}
+
+        </table>
+
+    {% endblock %}
