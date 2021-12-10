@@ -24,16 +24,3 @@ services:
     image: redis:latest
     expose:
       - 6379
-
-  nginx:
-    restart: always
-
-    build: ./nginx/
-
-    depends_on:
-      - web
-    ports:
-      - 80:80
-
-    links:
-      - web:web
