@@ -18,7 +18,7 @@ services:
     user: 1001:1002 ## needed for linux
 
     #command: python /code/realTimeChatCrypto/manage.py runserver 0.0.0.0:8000
-    command: daphne -b 0.0.0.0 -p 8000 mysite.asgi:application
+    command: daphne -b 0.0.0.0 -p 8000 realTimeChatCrypto.asgi:application
 
 
   redis:
