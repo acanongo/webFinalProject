@@ -2,6 +2,7 @@ version: '3'
 
 services:
   web:
+    restart: always
     build: .
     volumes:
        - .:/code
@@ -26,3 +27,16 @@ services:
     image: redis:latest
     expose:
       - 6379
+
+  nginx:
+    restart: always
+    build: ./nginx/
+    volumes:
+      - ./realTimeChatCrypto/static/:/static
+    depends_on:
+      - web
+    ports:
+      - 80:80
+      - 443:443
+    links:
+      - web:web
