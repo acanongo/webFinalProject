@@ -7,8 +7,8 @@ services:
     volumes:
        - .:/code
 
-    ports:
-      - 80:8000
+    #ports:
+      #- 80:8000
 
     links:
       - redis:redis
