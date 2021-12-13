@@ -74,7 +74,7 @@ def home(request):
         print(str(len(commentOjects)) + " " +str(type(commentOjects)))
     content = {
 
-        "title": "CINS-465",
+        "title": "Home Crypto Community",
         "contentInfo": bodyContent,
         "myForm": myForm,
         "mySuggestion": suggestionList,
