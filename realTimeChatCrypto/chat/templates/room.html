@@ -52,9 +52,7 @@
             + '/'
             + uName
             + '/'
-        const chatSocket = new WebSocket(u
-
-        );
+        const chatSocket = new WebSocket(u);
 
         chatSocket.onmessage = function(e) {
             const data = JSON.parse(e.data);
