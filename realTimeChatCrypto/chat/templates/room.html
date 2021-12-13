@@ -3,7 +3,6 @@
 {% extends "base.html" %}
 
 
-
 {% block titleBlock %} {{ title }} {% endblock %}
 
 
@@ -35,25 +34,13 @@
         //var userName = document.querySelector('username-input').value;
         <!-- end of new line-->
 
-        u =  'ws://'
-            + window.location.host
-            +'/'
-            + 'chat'
-            +'/'
-            + roomName
-            + '/'
-            + uName
-            + '/'
-        console.log(u);
-
-        v = 'ws://'
+        const chatSocket = new WebSocket(
+            'ws://'
             + window.location.host
             + '/ws/chat/'
             + roomName
             + '/'
-            + uName
-            + '/'
-        const chatSocket = new WebSocket(u);
+        );
 
         chatSocket.onmessage = function(e) {
             const data = JSON.parse(e.data);
