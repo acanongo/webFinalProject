@@ -31,11 +31,18 @@
         <!-- var userName = document.getElementById(`{ user.username }}`).value -->
         console.log("---> " +uName);
 
-
         <!--new line  -->
         //var userName = document.querySelector('username-input').value;
         <!-- end of new line-->
 
+        u =  'ws://'
+            + window.location.host
+            + '/ws/chat/'
+            + roomName
+            + '/'
+            + uName
+            + '/'
+        console.log(u);
         const chatSocket = new WebSocket(
             'ws://'
             + window.location.host
