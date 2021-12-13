@@ -43,14 +43,16 @@
             + uName
             + '/'
         console.log(u);
-        const chatSocket = new WebSocket(
-            'ws://'
+
+        v =             'ws://'
             + window.location.host
             + '/ws/chat/'
             + roomName
             + '/'
             + uName
             + '/'
+        const chatSocket = new WebSocket(u
+
         );
 
         chatSocket.onmessage = function(e) {
