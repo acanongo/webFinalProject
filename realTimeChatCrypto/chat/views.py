@@ -176,7 +176,7 @@ def getStats(request):
     url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest'
     parameters = {
         'start': '1',
-        'limit': '5',#Free API Restriction
+        'limit': '10',#Free API Restriction
         'convert': 'USD'
     }
     headers = {
